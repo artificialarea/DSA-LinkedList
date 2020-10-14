@@ -7,3 +7,6 @@ To run any of these scripts, in terminal command line enter: `node script-name.j
 <br />
 
 
+## Create a linked list class
+
+see: **`linked-list.js`**
