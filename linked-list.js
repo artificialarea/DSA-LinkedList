@@ -77,7 +77,6 @@ class LinkedList {
         let previousNode = this.head;
 
         while(counter !== index) {
-            console.log(counter);
             previousNode = currentNode;
             currentNode = currentNode.next;
             counter ++;
@@ -139,9 +138,67 @@ class LinkedList {
 
 }
 
+const linkedListHelpers = {
+    display: function(list) {
+        if (!list.head) {
+            console.log('The list is empty');
+            return;
+        }
+        let currentNode = list.head;
+        while (currentNode) {
+            console.log(currentNode.value);
+            currentNode = currentNode.next;
+        }
+    },
+    size: function(list) {
+        let counter = 0;
+        let currentNode = list.head;
+        while (currentNode) {
+            counter++;
+            currentNode = currentNode.next;
+        }
+        console.log('List size: ', counter);
+        return counter;
+    },
+    isEmpty: function(list) {
+        if (!list.head) return true;
+        return false;
+    },
+    findPrevious: function(value, list) {
+        if (!list.head) return null; // anyway to make validation DRY? like an .all() in Express router?
+
+        let currentNode = list.head;
+        let previousNode = currentNode;
+
+        while (currentNode.value !== value) {
+            if (currentNode.next === null) {
+                return null;
+            }
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+        }
+        console.log('Previous node: ', previousNode);
+        return previousNode;
+
+
+    },
+    findLast: function(list) {
+        if (!list.head) return null;
+
+        let currentNode = list.head;
+
+        while(currentNode.next) {
+            currentNode = currentNode.next;
+        }
+        console.log('Last node: ', currentNode);
+        return currentNode;
+    },
+};
+
 module.exports = {
     _Node,
-    LinkedList
+    LinkedList,
+    linkedListHelpers,
 };
 
 // let SLL = new LinkedList();
