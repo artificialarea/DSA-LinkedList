@@ -6,6 +6,10 @@ function main() {
     // task 1
     SLL.insertLast('Apollo');
     SLL.insertLast('Boomer');
+    SLL.insertLast('Boomer');
+    SLL.insertLast('Boomer');
+    SLL.insertLast('Boomer');
+    SLL.insertLast('Boomer');
     SLL.insertLast('Helo');
     SLL.insertLast('Husker');
     SLL.insertLast('Starbuck');
@@ -36,7 +40,11 @@ function main() {
     // task 5
     linkedListHelpers.findLast(SLL);
 
-    
+    // 
+    linkedListHelpers.removeDuplicates(SLL);
+    linkedListHelpers.display(SLL);
+
+
     // console.log(SLL);
     // console.log(JSON.stringify(SLL, null, 2));
     // console.log(SLL.find('Boomer'));

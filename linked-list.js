@@ -193,6 +193,23 @@ const linkedListHelpers = {
         console.log('Last node: ', currentNode);
         return currentNode;
     },
+    removeDuplicates: function(list) {
+        let current = list.head;
+        
+        while (current !== null) {
+            let newNode = current;
+            
+            while (newNode.next !== null) {
+                if (newNode.next.value === current.value) {
+                    newNode.next = newNode.next.next;
+                }
+                else {
+                    newNode = newNode.next;
+                }
+            }
+            current = current.next;
+        }
+    }
 };
 
 module.exports = {
