@@ -33,6 +33,7 @@ function main() {
 
     console.log(SLL);
     console.log(JSON.stringify(SLL, null, 2));
+    console.log(SLL.find('Boomer'));
     return SLL;
 }
 
