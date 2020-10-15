@@ -10,3 +10,8 @@ To run any of these scripts, in terminal command line enter: `node script-name.j
 ## Create a linked list class
 
 see: **`linked-list.js`**
+
+
+## Creating a singly linked list
+
+see: **`singly-linked-list.js`**

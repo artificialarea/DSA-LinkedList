@@ -67,9 +67,40 @@ class LinkedList {
         previousNode.next = currentNode.next;
     }
 
+    insertBefore(value, item) {
+        console.log('value:')
+        if(!this.head) return null;
+        // If the lookup value is the first item in the list
+        if(this.head.value === value) {
+            this.insertFirst(item); // this.head = new _Node(item, this.head);
+            return;
+        }
+
+        // Start at the head and keep track of previous node
+        let currentNode = this.head;
+        let previousNode = this.head;
+
+        while(currentNode.value !== value) {
+            if (!currentNode.next) return null;
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+
+        }
+        // insert new node item before current node value
+        // and rewire previous node next pointer to point to new node not current node.
+        previousNode.next = new _Node(item, currentNode);
+
+    }
+
+    insertAfter(item) {}
+
+    insertAt(position) {}
+
 }
 
 module.exports = {
     _Node,
     LinkedList
-}
+};
+
+// let SLL = new LinkedList();
