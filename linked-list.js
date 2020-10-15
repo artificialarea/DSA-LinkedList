@@ -115,7 +115,31 @@ class LinkedList {
 
     }
 
-    insertAt(position) {}
+    insertAt(index, item) {
+        // if(!this.head) return null;
+        if (index === 0) {
+            return this.head = new _Node(item, this.head);
+        }
+
+        // need to create a counter because
+        // linked lists don't have index numbers like an array
+        let counter = 1;
+
+        let currentNode = this.head.next;
+        let previousNode = this.head;
+
+        while(counter !== index) {
+            console.log(counter);
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+            counter ++;
+        }
+        // We initialize the new node with pointer to current node FIRST, 
+        // pushing the current node forward in the sequence,
+        // then reset/rewire/reattach the prevous node pointer to the new node.
+        previousNode.next = new _Node(item, currentNode);
+
+    }
 
 }
 
