@@ -19,6 +19,9 @@ function main() {
     // task 4
     SLL.insertBefore('Boomer', 'Athena');
     SLL.insertBefore('Apollo', 'Dualla');
+    
+    // task 5
+    SLL.insertAfter('Helo', 'Hotdog');
 
 
 

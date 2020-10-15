@@ -68,7 +68,6 @@ class LinkedList {
     }
 
     insertBefore(value, item) {
-        console.log('value:')
         if(!this.head) return null;
         // If the lookup value is the first item in the list
         if(this.head.value === value) {
@@ -92,7 +91,29 @@ class LinkedList {
 
     }
 
-    insertAfter(item) {}
+    insertAfter(value, item) {
+        if(!this.head) return null;
+
+        if(this.head.value === value) {
+            this.head.next = new _Node(item, null);
+            return;
+        }
+
+        // Start at the head
+        let currentNode = this.head;
+
+        while(currentNode.value !== value) {
+            if (!currentNode.next) return null;
+            currentNode = currentNode.next;
+        }
+        // Insert new node item after current node.
+        // Rewire pointers... note that the sequence/order is crucial, 
+        // otherwise next node and rest of linked list may be lost.
+        // We initialize the new node with the current pointer FIRST, 
+        // then reset/rewire/reattach the current pointer to the new node.
+        currentNode.next = new _Node(item, currentNode.next);
+
+    }
 
     insertAt(position) {}
 
