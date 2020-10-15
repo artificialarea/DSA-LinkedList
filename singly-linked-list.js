@@ -27,18 +27,8 @@ function main() {
     SLL.insertAt(4, 'Kat');
     SLL.insertAt(0, 'Kat erzat');
 
-
-
-
-
-
-
-
-
-
-
-
-
+    // task 7
+    SLL.remove('Tauhida');
 
 
     console.log(SLL);
