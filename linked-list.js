@@ -195,7 +195,7 @@ const linkedListHelpers = {
     },
     removeDuplicates: function(list) {
         let current = list.head;
-        
+
         while (current !== null) {
             let newNode = current;
             
@@ -209,6 +209,22 @@ const linkedListHelpers = {
             }
             current = current.next;
         }
+
+        // I don't understand why doesn't this work, too
+        // by cutting out the newNode variable in favour of currentNode?
+        
+        // let currentNode = list.head;
+        // while (currentNode !== null) {
+        //     while (currentNode.next !== null) {
+        //         if (currentNode.next.value === currentNode.value) {
+        //             currentNode.next = currentNode.next.next;
+        //         }
+        //         else {
+        //             currentNode = currentNode.next;
+        //         }
+        //     }
+        //     currentNode = currentNode.next;
+        // }
     }
 };
 
