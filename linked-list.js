@@ -125,7 +125,9 @@ class LinkedList {
         let previousNode = this.head;
 
         while(currentNode.value !== value) {
-            if (!currentNode.next) return null;
+            if (!currentNode.next) {
+                return null;
+            }
             // Save the previous node
             previousNode = currentNode;
             // Move head to next node
@@ -192,6 +194,25 @@ const linkedListHelpers = {
         }
         console.log('Last node: ', currentNode);
         return currentNode;
+    },
+    findMiddle: function(list) {    // Marius
+        if (!list.head) return null;
+
+        // define the slowPointer
+        // the one going one element at a time
+        let slowPointer = list.head;
+        // define the fastPointer
+        // the one going two elements at a time
+        let fastPointer = list.head;
+        while (fastPointer.next !== null && fastPointer.next.next !== null) {   // simulates Math.floor
+            // parse the linked list two elements at a time
+            fastPointer = fastPointer.next.next;
+            // parse the linked list one element at a time
+            slowPointer = slowPointer.next;
+        }
+        // by the time the fastPointer is reaching the end of the list
+        // the slowPointer is in the middle
+        console.log('Middle of the linked list: ', slowPointer.value);
     },
     removeDuplicates: function(list) {
         let current = list.head;

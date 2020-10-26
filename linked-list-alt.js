@@ -179,7 +179,7 @@ exampleList.findMiddle();
 
 
 //updated the second element and make it 5
-exampleList.update(2, 100);
+exampleList.update(2, 55);
 //show the list with updated element
 console.log('----> show the list with updated element');
 exampleList.show();

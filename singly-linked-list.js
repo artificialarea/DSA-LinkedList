@@ -27,6 +27,8 @@ function main() {
     SLL.insertAt(0, 'Kat erzat');
     // task 7
     SLL.remove('Tauhida');
+    SLL.remove('Sacha');
+    
 
     // Supplemental 
     // task 1
@@ -43,6 +45,7 @@ function main() {
     // 
     linkedListHelpers.removeDuplicates(SLL);
     linkedListHelpers.display(SLL);
+    linkedListHelpers.findMiddle(SLL);
 
 
     // console.log(SLL);
